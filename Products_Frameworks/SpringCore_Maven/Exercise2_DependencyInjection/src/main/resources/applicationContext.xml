@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emailNotification" class="com.deepskilling.service.EmailNotification">
+        <constructor-arg value="admin@example.com"/>
+    </bean>
+
+    <bean id="smsNotification" class="com.deepskilling.service.SMSNotification">
+        <property name="phoneNumber" value="+91-9876543210"/>
+    </bean>
+
+    <bean id="userControllerEmail" class="com.deepskilling.controller.UserController">
+        <constructor-arg ref="emailNotification"/>
+    </bean>
+
+    <bean id="userControllerSMS" class="com.deepskilling.controller.UserController">
+        <constructor-arg ref="smsNotification"/>
+    </bean>
+
+</beans>

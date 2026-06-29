@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="book1" class="com.deepskilling.Book">
+        <constructor-arg value="Clean Code"/>
+        <constructor-arg value="Robert C. Martin"/>
+        <constructor-arg value="450.00"/>
+    </bean>
+
+    <bean id="book2" class="com.deepskilling.Book">
+        <property name="title"  value="Effective Java"/>
+        <property name="author" value="Joshua Bloch"/>
+        <property name="price"  value="599.00"/>
+    </bean>
+
+    <bean id="libraryService" class="com.deepskilling.LibraryService"/>
+
+</beans>
