@@ -27,8 +27,18 @@ git log --oneline --graph -n 6              # visualize branch/merge history
 5. `git log --oneline --graph` (see below) shows the branch point and merge.
 
 ```
-<merge log will show two parents joining: the main-line commit and the feature-branch commit>
+*   d4ba74c Merge feature/git-exercise-branching: Week 4 Git Exercise 2 demo
+|\
+| * 9826139 Week 4 Git Exercise 2: add feature-branch change
+|/
+* 4023bd5 Week 4: Git exercise 1 (basic commands) and base files for exercises 2-3
+* 78ba5d4 Week 3 mandatory exercises - Microservices and React
 ```
+
+The merge commit `d4ba74c` has two parents — `4023bd5` (main-line) and `9826139` (the
+feature-branch tip) — which is exactly what a non-fast-forward merge (`git merge --no-ff`)
+produces: it preserves the fact that the change happened on a separate branch instead of
+rewriting history into a straight line.
 
 ## Branching strategies (concept notes)
 - **Feature branching** — one branch per feature/fix, merged back into main when complete
