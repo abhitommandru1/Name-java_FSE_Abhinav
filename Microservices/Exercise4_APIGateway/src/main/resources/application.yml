@@ -19,6 +19,18 @@ spring:
           predicates:
             - Path=/api/orders/**
 
+        # Route all /api/accounts/** to account-service via Eureka
+        - id: account-service-route
+          uri: lb://account-service
+          predicates:
+            - Path=/api/accounts/**
+
+        # Route all /api/loans/** to loan-service via Eureka
+        - id: loan-service-route
+          uri: lb://loan-service
+          predicates:
+            - Path=/api/loans/**
+
 eureka:
   client:
     service-url:

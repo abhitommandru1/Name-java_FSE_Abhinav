@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="india" class="com.deepskilling.Country">
+        <property name="name" value="India"/>
+        <property name="code" value="IN"/>
+        <property name="capital" value="New Delhi"/>
+    </bean>
+
+    <bean id="usa" class="com.deepskilling.Country">
+        <property name="name" value="United States"/>
+        <property name="code" value="US"/>
+        <property name="capital" value="Washington, D.C."/>
+    </bean>
+
+    <bean id="japan" class="com.deepskilling.Country">
+        <property name="name" value="Japan"/>
+        <property name="code" value="JP"/>
+        <property name="capital" value="Tokyo"/>
+    </bean>
+
+</beans>
