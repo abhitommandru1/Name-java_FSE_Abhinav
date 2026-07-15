@@ -1,0 +1,18 @@
+.app {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: system-ui, sans-serif;
+}
+
+section {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.highlighted {
+  background: #eef6fc;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
