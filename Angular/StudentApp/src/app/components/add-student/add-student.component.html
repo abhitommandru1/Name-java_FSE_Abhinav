@@ -1,0 +1,25 @@
+<div class="add-student">
+  <h2>Add New Student</h2>
+  @if (error) {
+    <p class="error">{{ error }}</p>
+  }
+  <form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+    <div class="form-group">
+      <label>Name</label>
+      <input name="name" [(ngModel)]="name" placeholder="Enter student name" />
+    </div>
+    <div class="form-group">
+      <label>Course</label>
+      <input name="course" [(ngModel)]="course" placeholder="Enter course name" />
+    </div>
+    <div class="form-group">
+      <label>Grade</label>
+      <select name="grade" [(ngModel)]="grade">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+    </div>
+    <button type="submit" class="btn-add">Add Student</button>
+  </form>
+</div>
