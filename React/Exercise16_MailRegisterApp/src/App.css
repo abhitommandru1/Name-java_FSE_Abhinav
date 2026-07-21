@@ -1,0 +1,10 @@
+.error {
+  color: #c0392b;
+  font-size: 0.85em;
+  margin: 2px 0 8px;
+}
+
+.success {
+  color: #27ae60;
+  font-weight: 600;
+}
