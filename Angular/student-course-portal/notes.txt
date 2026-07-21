@@ -1,0 +1,30 @@
+Hands-On 1, Task 1 — purpose of each generated file
+
+angular.json         — Workspace-level build configuration: defines projects, build targets
+                        (build/serve/test), file replacements, and asset/style bundling rules.
+tsconfig.json         — Root TypeScript compiler configuration shared across the app, shared by
+                        tsconfig.app.json and tsconfig.spec.json via "extends".
+tsconfig.app.json     — TypeScript config specific to the application build (excludes spec
+                        files from the production bundle).
+package.json          — npm package manifest: Angular/RxJS/zone.js dependencies, dev
+                        dependencies, and CLI scripts (ng serve/build/test).
+src/main.ts           — Application entry point; calls bootstrapApplication(App, appConfig) to
+                        bootstrap the root standalone component directly (no NgModule).
+src/app/app.config.ts — Standalone application configuration: registers providers
+                        (provideRouter, zone change detection, global error listeners) that an
+                        NgModule's `providers` array would have held in older Angular versions.
+src/app/app.ts         — Root standalone component (App class); hosts <router-outlet> and is
+                        the component bootstrapped by main.ts.
+src/index.html        — The single static HTML page served to the browser; contains
+                        <app-root></app-root>, which Angular replaces with the rendered app.
+
+Notes:
+- This project has no app.module.ts — Angular 20 continues the standalone-components-by-default
+  pattern introduced in Angular 17, so app.config.ts is where providers now live.
+- `ng build` output (dist/student-course-portal/browser/) contains index.html, favicon.ico, and
+  hashed main-*.js / styles-*.css bundles — main-*.js is the file containing the compiled
+  application code (all components, services, and Angular framework code bundled together).
+- angular.json → architect.build.configurations.production.budgets defines maximumWarning and
+  maximumError thresholds (in KB) for the initial bundle size — exceeding maximumWarning prints
+  a build warning, exceeding maximumError fails the production build. This guards against
+  accidentally shipping an oversized bundle to users.

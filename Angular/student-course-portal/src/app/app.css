@@ -1,0 +1,13 @@
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+}
+
+.global-spinner {
+  background: #ffe08a;
+  padding: 6px 24px;
+  font-weight: 600;
+  text-align: center;
+}

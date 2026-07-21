@@ -1,0 +1,19 @@
+.card-row {
+  margin-bottom: 4px;
+}
+
+.crud-actions {
+  display: flex;
+  gap: 8px;
+  margin: -8px 0 16px;
+}
+
+.add-course-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.error {
+  color: #c0392b;
+}
