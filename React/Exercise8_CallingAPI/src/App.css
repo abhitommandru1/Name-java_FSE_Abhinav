@@ -1,0 +1,21 @@
+.app {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: system-ui, sans-serif;
+  text-align: left;
+}
+
+.intro {
+  color: var(--text);
+}
+
+section {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.error {
+  color: #c0392b;
+}
