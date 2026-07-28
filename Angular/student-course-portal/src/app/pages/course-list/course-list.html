@@ -1,0 +1,35 @@
+<h2>Courses</h2>
+
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  (ngModelChange)="onSearchChange()"
+  placeholder="Search courses (updates ?search= in URL)..."
+/>
+
+<p *ngIf="isLoading$ | async">Loading courses...</p>
+<p class="error" *ngIf="error$ | async as error">{{ error }}</p>
+
+<ng-container *ngIf="!(isLoading$ | async) && !(error$ | async)">
+  <div *ngIf="(courses$ | async)?.length; else noCourses">
+    <div *ngFor="let course of courses$ | async; trackBy: trackByCourseId" class="card-row">
+      <app-course-card [course]="course" (enrollRequested)="onEnroll($event)"></app-course-card>
+      <div class="crud-actions">
+        <button type="button" (click)="bumpCredits(course)">+1 Credit (PUT)</button>
+        <button type="button" (click)="deleteCourse(course)">Delete (DELETE)</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #noCourses>
+    <p>No courses available.</p>
+  </ng-template>
+</ng-container>
+
+<p *ngIf="selectedCourseId">Selected course ID: {{ selectedCourseId }}</p>
+
+<h3>Add a Course (POST)</h3>
+<form #addForm="ngForm" (ngSubmit)="addCourse(addForm)" class="add-course-form">
+  <input type="text" name="newCourseName" [(ngModel)]="newCourseName" placeholder="Course name" required />
+  <input type="text" name="newCourseCode" [(ngModel)]="newCourseCode" placeholder="Course code" required />
+  <button type="submit" [disabled]="addForm.invalid">Add Course</button>
+</form>

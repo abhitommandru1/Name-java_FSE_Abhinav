@@ -1,0 +1,54 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  gap: 4px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+label.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+input,
+select {
+  padding: 6px 8px;
+  font: inherit;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 0.85em;
+}
+
+.success {
+  color: #27ae60;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.array-section {
+  margin-top: 16px;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+.array-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
