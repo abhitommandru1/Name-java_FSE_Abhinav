@@ -1,0 +1,2 @@
+Deep Skilling - Week 4 - Git Exercise 1
+This file exists to demonstrate git add, commit, status, and log.
