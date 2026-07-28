@@ -1,0 +1,10 @@
+<div class="student-list">
+  @if (filteredStudents().length === 0) {
+    <p class="empty-msg">No students found.</p>
+  } @else {
+    <h2>Students ({{ filteredStudents().length }})</h2>
+    @for (student of filteredStudents(); track student.id) {
+      <app-student-card [student]="student" (delete)="onDelete($event)" />
+    }
+  }
+</div>

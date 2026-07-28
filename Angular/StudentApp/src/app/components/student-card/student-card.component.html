@@ -1,0 +1,8 @@
+<div class="student-card">
+  <div class="card-info">
+    <h3>{{ student.name }}</h3>
+    <p>Course: <strong>{{ student.course }}</strong></p>
+    <p>Grade: <strong [style.color]="gradeColor">{{ student.grade }}</strong></p>
+  </div>
+  <button class="btn-delete" (click)="onDeleteClick()">Delete</button>
+</div>

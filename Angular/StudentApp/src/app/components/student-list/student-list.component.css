@@ -1,0 +1,8 @@
+.student-list {
+  margin-top: 20px;
+}
+
+.empty-msg {
+  color: #888;
+  font-style: italic;
+}

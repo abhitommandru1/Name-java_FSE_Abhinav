@@ -1,0 +1,16 @@
+<div class="app">
+  <h1>{{ title }}</h1>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search by name or course..."
+      [(ngModel)]="filter"
+      name="filter"
+    />
+  </div>
+
+  <app-student-list [filter]="filter" />
+
+  <app-add-student />
+</div>
